@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Store</title>
+    <meta name="description" content="Aframe-Material">
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+    <script src="dist/aframe-material.js"></script>
+    <script type="text/javascript">
+      AFRAME.ASSETS_PATH = "./assets";
+    </script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity laser-controls="hand: right"></a-entity>
+
+      <a-entity> <a-camera look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera></a-entity>
+	  
+	    <a-entity  position="-2.3 3 -2" text="value:  How does IN-STORE Analytics work ? ;width: 4;color: black; align: center;font: exo2semibold;" visible="true" rotation="0 20 0">
+   <a-animation attribute="rotation" from="0 0 0" to="0 0 0" dur="600"
+                     easing="linear" repeat="indefinite"></a-animation></a-entity>
+ <a-entity geometry="primitive: plane; height: 3.5; width: 3.2;" position="-3.8 1.5 -3" rotation="0 10 0" material="shader: flat; transparent: true; src: url(images/bwireless61.jpg)"></a-entity>
+
+ 
+	  
+	  
+  <a-entity  position="1.2 3 -2" text="value:  Dashboard;width: 4;color: black; align: center;font: exo2semibold;" visible="true" rotation="0 -10 0">
+   <a-animation attribute="rotation" from="0 0 0" to="90 0 0" dur="600"
+                     easing="linear" repeat="indefinite"></a-animation></a-entity>
+ <a-entity geometry="primitive: plane; height: 3.15; width: 5.6;" position="1.2 1.5 -2.5" rotation="0 -10 0" material="shader: flat; transparent: true; src: url(images/dashboard.png)"></a-entity>
+
+ 
+
+	<!-- BEGIN ENVIRONEMENT -->
+      <a-gradient-sky material="shader: gradient; topColor: 200 0 0; bottomColor: 0 121 255;"></a-gradient-sky>
+      <!-- END ENVIRONEMENT -->
+    </a-scene>
+    <script type="text/javascript">
+	
+	
+// Get the modal
+var str=0;
+let keyboard = document.querySelector("a-keyboard");
+let loginbtn = document.querySelector("#login");
+loginbtn.addEventListener('click', function (){
+ 
+  console.log(str);
+  if(str=="0sansan")
+  {
+  console.log("Login Successfull");
+  document.querySelector('#user').setAttribute('visible', 'false')
+  document.querySelector('#pass').setAttribute('visible', 'false')
+  document.querySelector('#login').setAttribute('visible', 'false')
+  document.querySelector('a-keyboard').setAttribute('visible', 'false')
+  document.querySelector('#Store').setAttribute('visible', 'true')
+  document.querySelector('#Admin').setAttribute('visible', 'true')
+   document.querySelector('#message').setAttribute('visible', 'false')
+  }
+  else
+  {
+  console.log("Please fill Correct details");
+  document.querySelector('#message').setAttribute('visible', 'true')
+  }
+});
+keyboard.addEventListener('input', (e)=>{
+  str += e.detail;
+  console.log(str);
+});
+keyboard.addEventListener('enter', (e)=>{
+  console.log("Enter key pressed!")
+})
+keyboard.addEventListener('dismiss', (e)=>{
+  console.log("Dismiss: ", e.toString());
+  
+});
+keyboard.addEventListener('backspace', (e)=>{
+  str = str.slice(0, -1);
+  console.log(str);
+});
+    </script>
+  </body>
+</html>

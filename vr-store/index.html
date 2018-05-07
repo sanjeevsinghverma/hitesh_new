@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html class="a-html"><head>
+    <meta charset="utf-8">
+    <title>Retail Store</title>
+    <meta name="description" content="A-Frame Rain component">
+    <meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui"><meta aframe-injected="" name="mobile-web-app-capable" content="yes"><meta aframe-injected="" name="theme-color" content="black">
+	<script>
+    /*
+    var WebVRConfig = {
+        FORCE_ENABLE_VR: true,
+        BUFFER_SCALE: 1.0
+    };
+    */
+    </script>
+    <script src="https://cdn.rawgit.com/aframevr/aframe/v0.5.0/dist/aframe-master.js"></script>
+	<style type="text/css" data-href="src/style/aframe.css">.a-html{bottom:0;left:0;position:fixed;right:0;top:0}.a-body{height:100%;margin:0;overflow:hidden;padding:0;width:100%}:-webkit-full-screen{background-color:transparent}.a-hidden{display:none!important}.a-canvas{height:100%;left:0;position:absolute;top:0;width:100%}.a-canvas.a-grab-cursor:hover{cursor:grab;cursor:-moz-grabbing;cursor:-webkit-grab}.a-canvas.a-grab-cursor:active,.a-grabbing{cursor:grabbing;cursor:-moz-grabbing;cursor:-webkit-grabbing}// Class is removed when doing <a-scene embedded>. .a-canvas.fullscreen{width:100%!important;height:100%!important;top:0!important;left:0!important;right:0!important;bottom:0!important;z-index:999999!important;position:fixed!important}.a-inspector-loader{background-color:#ed3160;position:fixed;left:3px;top:3px;padding:6px 10px;color:#fff;text-decoration:none;font-size:12px;font-family:Roboto,sans-serif;text-align:center;z-index:99999;width:174px}@keyframes dots-1{from{opacity:0}25%{opacity:1}}@keyframes dots-2{from{opacity:0}50%{opacity:1}}@keyframes dots-3{from{opacity:0}75%{opacity:1}}@-webkit-keyframes dots-1{from{opacity:0}25%{opacity:1}}@-webkit-keyframes dots-2{from{opacity:0}50%{opacity:1}}@-webkit-keyframes dots-3{from{opacity:0}75%{opacity:1}}.a-inspector-loader .dots span{animation:dots-1 2s infinite steps(1);-webkit-animation:dots-1 2s infinite steps(1)}.a-inspector-loader .dots span:first-child+span{animation-name:dots-2;-webkit-animation-name:dots-2}.a-inspector-loader .dots span:first-child+span+span{animation-name:dots-3;-webkit-animation-name:dots-3}a-scene{display:block;position:relative;height:100%;width:100%}a-assets,a-scene audio,a-scene img,a-scene video{display:none}.a-enter-vr-modal,.a-orientation-modal{font-family:Consolas,Andale Mono,Courier New,monospace}.a-enter-vr-modal a{border-bottom:1px solid #fff;padding:2px 0;text-decoration:none;transition:.1s color ease-in}.a-enter-vr-modal a:hover{background-color:#fff;color:#111;padding:2px 4px;position:relative;left:-4px}.a-enter-vr{font-family:sans-serif,monospace;font-size:13px;width:100%;font-weight:200;line-height:16px;height:10%;position:absolute;right:20px;bottom:20px}.a-enter-vr.embedded{right:5px;bottom:5px}.a-enter-vr-button,.a-enter-vr-modal,.a-enter-vr-modal a{color:#fff}.a-enter-vr-button{background:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20245.82%20141.73%22%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%23fff%3Bfill-rule%3Aevenodd%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Emask%3C%2Ftitle%3E%3Cpath%20class%3D%22a%22%20d%3D%22M175.56%2C111.37c-22.52%2C0-40.77-18.84-40.77-42.07S153%2C27.24%2C175.56%2C27.24s40.77%2C18.84%2C40.77%2C42.07S198.08%2C111.37%2C175.56%2C111.37ZM26.84%2C69.31c0-23.23%2C18.25-42.07%2C40.77-42.07s40.77%2C18.84%2C40.77%2C42.07-18.26%2C42.07-40.77%2C42.07S26.84%2C92.54%2C26.84%2C69.31ZM27.27%2C0C11.54%2C0%2C0%2C12.34%2C0%2C28.58V110.9c0%2C16.24%2C11.54%2C30.83%2C27.27%2C30.83H99.57c2.17%2C0%2C4.19-1.83%2C5.4-3.7L116.47%2C118a8%2C8%2C0%2C0%2C1%2C12.52-.18l11.51%2C20.34c1.2%2C1.86%2C3.22%2C3.61%2C5.39%2C3.61h72.29c15.74%2C0%2C27.63-14.6%2C27.63-30.83V28.58C245.82%2C12.34%2C233.93%2C0%2C218.19%2C0H27.27Z%22%2F%3E%3C%2Fsvg%3E) 50% 50%/70% 70% no-repeat rgba(0,0,0,.35);border:0;bottom:0;cursor:pointer;min-width:50px;min-height:30px;padding-right:5%;padding-top:4%;position:absolute;right:0;transition:background-color .05s ease;-webkit-transition:background-color .05s ease;z-index:9999}.a-enter-vr-button:active,.a-enter-vr-button:hover{background-color:#666}[data-a-enter-vr-no-webvr] .a-enter-vr-button{border-color:#666;opacity:.65}[data-a-enter-vr-no-webvr] .a-enter-vr-button:active,[data-a-enter-vr-no-webvr] .a-enter-vr-button:hover{background-color:rgba(0,0,0,.35);cursor:not-allowed}.a-enter-vr-modal{background-color:#666;border-radius:0;display:none;min-height:32px;margin-right:70px;padding:9px;width:280px;right:2%;position:absolute}.a-enter-vr-modal:after{border-bottom:10px solid transparent;border-left:10px solid #666;border-top:10px solid transparent;display:inline-block;content:'';position:absolute;right:-5px;top:5px;width:0;height:0}.a-enter-vr-modal a,.a-enter-vr-modal p{display:inline}.a-enter-vr-modal p{margin:0}.a-enter-vr-modal p:after{content:' '}[data-a-enter-vr-no-headset].a-enter-vr:hover .a-enter-vr-modal,[data-a-enter-vr-no-webvr].a-enter-vr:hover .a-enter-vr-modal{display:block}.a-orientation-modal{background:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2090%2090%22%20enable-background%3D%22new%200%200%2090%2090%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20points%3D%220%2C0%200%2C0%200%2C0%20%22%3E%3C/polygon%3E%3Cg%3E%3Cpath%20d%3D%22M71.545%2C48.145h-31.98V20.743c0-2.627-2.138-4.765-4.765-4.765H18.456c-2.628%2C0-4.767%2C2.138-4.767%2C4.765v42.789%20%20%20c0%2C2.628%2C2.138%2C4.766%2C4.767%2C4.766h5.535v0.959c0%2C2.628%2C2.138%2C4.765%2C4.766%2C4.765h42.788c2.628%2C0%2C4.766-2.137%2C4.766-4.765V52.914%20%20%20C76.311%2C50.284%2C74.173%2C48.145%2C71.545%2C48.145z%20M18.455%2C16.935h16.344c2.1%2C0%2C3.808%2C1.708%2C3.808%2C3.808v27.401H37.25V22.636%20%20%20c0-0.264-0.215-0.478-0.479-0.478H16.482c-0.264%2C0-0.479%2C0.214-0.479%2C0.478v36.585c0%2C0.264%2C0.215%2C0.478%2C0.479%2C0.478h7.507v7.644%20%20%20h-5.534c-2.101%2C0-3.81-1.709-3.81-3.81V20.743C14.645%2C18.643%2C16.354%2C16.935%2C18.455%2C16.935z%20M16.96%2C23.116h19.331v25.031h-7.535%20%20%20c-2.628%2C0-4.766%2C2.139-4.766%2C4.768v5.828h-7.03V23.116z%20M71.545%2C73.064H28.757c-2.101%2C0-3.81-1.708-3.81-3.808V52.914%20%20%20c0-2.102%2C1.709-3.812%2C3.81-3.812h42.788c2.1%2C0%2C3.809%2C1.71%2C3.809%2C3.812v16.343C75.354%2C71.356%2C73.645%2C73.064%2C71.545%2C73.064z%22%3E%3C/path%3E%3Cpath%20d%3D%22M28.919%2C58.424c-1.466%2C0-2.659%2C1.193-2.659%2C2.66c0%2C1.466%2C1.193%2C2.658%2C2.659%2C2.658c1.468%2C0%2C2.662-1.192%2C2.662-2.658%20%20%20C31.581%2C59.617%2C30.387%2C58.424%2C28.919%2C58.424z%20M28.919%2C62.786c-0.939%2C0-1.703-0.764-1.703-1.702c0-0.939%2C0.764-1.704%2C1.703-1.704%20%20%20c0.94%2C0%2C1.705%2C0.765%2C1.705%2C1.704C30.623%2C62.022%2C29.858%2C62.786%2C28.919%2C62.786z%22%3E%3C/path%3E%3Cpath%20d%3D%22M69.654%2C50.461H33.069c-0.264%2C0-0.479%2C0.215-0.479%2C0.479v20.288c0%2C0.264%2C0.215%2C0.478%2C0.479%2C0.478h36.585%20%20%20c0.263%2C0%2C0.477-0.214%2C0.477-0.478V50.939C70.131%2C50.676%2C69.917%2C50.461%2C69.654%2C50.461z%20M69.174%2C51.417V70.75H33.548V51.417H69.174z%22%3E%3C/path%3E%3Cpath%20d%3D%22M45.201%2C30.296c6.651%2C0%2C12.233%2C5.351%2C12.551%2C11.977l-3.033-2.638c-0.193-0.165-0.507-0.142-0.675%2C0.048%20%20%20c-0.174%2C0.198-0.153%2C0.501%2C0.045%2C0.676l3.883%2C3.375c0.09%2C0.075%2C0.198%2C0.115%2C0.312%2C0.115c0.141%2C0%2C0.273-0.061%2C0.362-0.166%20%20%20l3.371-3.877c0.173-0.2%2C0.151-0.502-0.047-0.675c-0.194-0.166-0.508-0.144-0.676%2C0.048l-2.592%2C2.979%20%20%20c-0.18-3.417-1.629-6.605-4.099-9.001c-2.538-2.461-5.877-3.817-9.404-3.817c-0.264%2C0-0.479%2C0.215-0.479%2C0.479%20%20%20C44.72%2C30.083%2C44.936%2C30.296%2C45.201%2C30.296z%22%3E%3C/path%3E%3C/g%3E%3C/svg%3E) center/50% 50% no-repeat rgba(244,244,244,1);bottom:0;font-size:14px;font-weight:600;left:0;line-height:20px;right:0;position:fixed;top:0;z-index:9999999}.a-orientation-modal:after{color:#666;content:"Insert phone into Cardboard holder.";display:block;position:absolute;text-align:center;top:70%;transform:translateY(-70%);width:100%}.a-orientation-modal button{background:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20100%20100%22%20enable-background%3D%22new%200%200%20100%20100%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M55.209%2C50l17.803-17.803c1.416-1.416%2C1.416-3.713%2C0-5.129c-1.416-1.417-3.713-1.417-5.129%2C0L50.08%2C44.872%20%20L32.278%2C27.069c-1.416-1.417-3.714-1.417-5.129%2C0c-1.417%2C1.416-1.417%2C3.713%2C0%2C5.129L44.951%2C50L27.149%2C67.803%20%20c-1.417%2C1.416-1.417%2C3.713%2C0%2C5.129c0.708%2C0.708%2C1.636%2C1.062%2C2.564%2C1.062c0.928%2C0%2C1.856-0.354%2C2.564-1.062L50.08%2C55.13l17.803%2C17.802%20%20c0.708%2C0.708%2C1.637%2C1.062%2C2.564%2C1.062s1.856-0.354%2C2.564-1.062c1.416-1.416%2C1.416-3.713%2C0-5.129L55.209%2C50z%22%3E%3C/path%3E%3C/svg%3E) no-repeat;border:none;height:50px;text-indent:-9999px;width:50px}</style><style type="text/css" data-href="src/style/rStats.css">.rs-base{background-color:#333;border-radius:0;font:10px monospace;left:5px;line-height:1em;opacity:.85;overflow:hidden;padding:10px;position:fixed;top:5px;width:300px;z-index:10000}.rs-base div.hidden{display:none}.rs-base h1{color:#fff;cursor:pointer;font-size:1.2em;font-weight:300;margin:0 0 5px;padding:0}.rs-base h2{color:#fff;cursor:pointer;font-size:1.8em;font-weight:300;margin:0 0 5px;padding:0}.rs-group{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-direction:column-reverse;flex-direction:column-reverse;margin-bottom:5px}.shopping-cart {width: 100px;height: 203px;margin: 80px auto;background: #FFFFFF;box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);border-radius: 6px;display: flex;flex-direction: column;}.title {height: 60px;border-bottom: 1px solid #E1E8EE;padding: 20px 30px;color: #5E6977;font-size: 18px;font-weight: 100}.item {padding: 20px 30px;height: 120px;display: flex;}.item:nth-child(3) {border-top:  1px solid #E1E8EE;border-bottom:  1px solid #E1E8EE;}.rs-group:last-child{margin-bottom:0}.rs-counter-base{align-items:center;display:-webkit-box;display:-webkit-flex;display:flex;height:10px;-webkit-justify-content:space-between;justify-content:space-between;margin:2px 0}.rs-counter-base.alarm{color:#b70000;text-shadow:0 0 0 #b70000,0 0 1px #fff,0 0 1px #fff,0 0 2px #fff,0 0 2px #fff,0 0 3px #fff,0 0 3px #fff,0 0 4px #fff,0 0 4px #fff}.rs-counter-id{font-weight:300;-webkit-box-ordinal-group:0;-webkit-order:0;order:0;width:54px}.rs-counter-value{font-weight:300;-webkit-box-ordinal-group:1;-webkit-order:1;order:1;text-align:right;width:35px}.rs-canvas{-webkit-box-ordinal-group:2;-webkit-order:2;order:2}@media (min-width:480px){.rs-base{left:20px;top:20px}}</style>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.2.0/dist/aframe-extras.min.js"></script>
+    <script src="./build/aframe-rain.js"></script>
+	<script src="https://3d.io/releases/3dio-js/1.x.x-beta/3dio.min.js"></script>
+	 <script src="https://unpkg.com/aframe-audioanalyser-component@^3.0.3/dist/aframe-audioanalyser-component.min.js"></script>
+
+	<!--
+<script>
+function myFunction() {
+
+    document.getElementById("demo").innerHTML = "Congratulations Dear Customer </br> </br>Your Products are blocked..</br></br>Thanks for Shopping";
+	
+	
+	}
+</script>-->
+<script>
+    AFRAME.registerComponent('score-counter', {
+      schema: {
+        el: {
+          type: 'selector'
+        },
+        score:{
+          type: 'int',
+          default: 0
+        },
+		 score1:{
+          type: 'int',
+          default: 0
+        },
+		 score2:{
+          type: 'int',
+          default: 0
+        },
+		
+      },
+       
+      init: function () {
+	 
+        var sceneEl = document.querySelector('a-scene'); 
+        var scoreBoard = document.querySelector('#score');
+		var scoreBoard1 = document.querySelector('#score1');
+		var scoreBoard2 = document.querySelector('#score2');
+        sceneEl.querySelector('#plus').addEventListener('click', () => {
+          this.data.score++;
+          var newScore = '' + this.data.score
+          scoreBoard.setAttribute('text', 'value',  newScore)
+        })
+		sceneEl.querySelector('#minus').addEventListener('click', () => {
+          this.data.score--;
+          var newScore = '' + this.data.score
+          scoreBoard.setAttribute('text', 'value',  newScore)
+		  
+        })
+		sceneEl.querySelector('#add').addEventListener('click', () => {
+          this.data.score;
+          var newScore = 'RedShirt  '  +this.data.score + ' 10  ' + this.data.score*10
+          
+		  document.getElementById("p1").innerHTML = newScore;
+        })
+		 sceneEl.querySelector('#plus1').addEventListener('click', () => {
+          this.data.score1++;
+          var newScore1 = '' + this.data.score1
+          scoreBoard1.setAttribute('text', 'value',  newScore1)
+        })
+		sceneEl.querySelector('#minus1').addEventListener('click', () => {
+          this.data.score1--;
+          var newScore1 = '' + this.data.score1
+          scoreBoard1.setAttribute('text', 'value',  newScore1)
+		  
+        })
+		sceneEl.querySelector('#add1').addEventListener('click', () => {
+          this.data.score1;
+          var newScore1 = 'XXLSofa '  +this.data.score1 + ' 100  ' + this.data.score1*100
+          
+		  
+		  document.getElementById("p2").innerHTML = newScore1;
+		  
+        })
+		sceneEl.querySelector('#plus2').addEventListener('click', () => {
+          this.data.score2++;
+          var newScore2 = '' + this.data.score2
+          scoreBoard2.setAttribute('text', 'value',  newScore2)
+        })
+		sceneEl.querySelector('#minus2').addEventListener('click', () => {
+          this.data.score2--;
+          var newScore2 = '' + this.data.score2
+          scoreBoard2.setAttribute('text', 'value',  newScore2)
+		  
+        })
+		sceneEl.querySelector('#add2').addEventListener('click', () => {
+          this.data.score2;
+          var newScore2 = 'Chair-B '  +this.data.score2 + ' 100  ' + this.data.score2*250
+          
+		  
+		  document.getElementById("p3").innerHTML = newScore2;
+		  
+        })
+		
+		sceneEl.querySelector('#checkout').addEventListener('click', () => {
+          
+          var totalprice = this.data.score*10  +this.data.score1*100+ this.data.score2*250;
+          
+		  
+		  document.getElementById("p4").innerHTML = "Total Price    : " +  totalprice;
+		  document.querySelector('#block').setAttribute('visible', 'true')
+		  document.querySelector('#checkout').setAttribute('visible', 'false')
+		  
+        })
+		sceneEl.querySelector('#block').addEventListener('click', () => {
+          var totalprice1 = this.data.score +this.data.score1+ this.data.score2;
+         if (totalprice1.toString() >  0) {
+    document.getElementById("p5").innerHTML = "Congratulations Dear Customer </br> </br>Your Products are blocked..</br></br>Thanks for Shopping";
+		 
+			}
+          else {
+    console.log(totalprice1.toString());
+}
+		  
+		  
+        })
+      }
+    });
+    </script>
+
+
+	
+<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
+<script src="http://www.anj.fyi/components/manipulate.js"></script>
+<script src="http://www.anj.fyi/components/append.js"></script>
+
+<script src="js/aframe-material.js"></script>
+  </head>
+  <body class="a-body">
+    <a-scene score-counter antialias="true" physics="" canvas="" keyboard-shortcuts="" vr-mode-ui="enabled: true">
+
+<a-assets>
+      <a-asset-item id="why-male-models" src="man/man.dae"></a-asset-item>
+	  <a-asset-item id="why-male-models1" src="man1/man.dae"></a-asset-item>
+	  <a-asset-item id="table" src="table/TABLE-dae.dae"></a-asset-item>
+	  <img id="pr1" src="images/pi1.png">
+	 <!-- <audio id="song" autoplay loop src="images/Tours-Enthusiast.wav" ></audio>-->
+	 
+</a-assets>
+
+<a-entity id="cap" position="2.1213202476501465 2.5999999046325684 -16.121320724487305"></a-entity>
+<!--	   
+<a-entity audioanalyser="src: #song" component-that-does-stuff-with-audio-analyser-data></a-entity>-->
+<a-entity id="checkout" static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="-10.8 1.7 -20" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/checkout.jpg)">
+
+ <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="15000"
+                     easing="linear" repeat="indefinite"></a-animation></a-entity>	 
+
+
+ <a-entity id="block" sound="src: url(images/1.mp3); autoplay: true" visible ="false" static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="-10 1.7 -25" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/blk.jpg)"> <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="15000"
+                     easing="linear" repeat="indefinite"></a-animation></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 0.01; height: 1; width: 6" position="0 3.8 -29" rotation="0 0 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/Welcome11.gif)"></a-entity>
+ 
+	   <!-- Dragable Boxes -->
+<a-entity dragable="on: mousedown; off: mouseup">
+<!--
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="14 0.53 0" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="16 0.53 0" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="14 0.53 3" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="16 0.53 3" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="14 0.53 6" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="16 0.53 6" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="14 0.53 9" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="16 0.53 9" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="33.5 0.53 0" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="33.5 0.53 3" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="33.5 0.53 6" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="33.5 0.53 9" rotation="0 90 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+
+ <a-entity dynamic-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="20 1.8 -10.5" rotation="0 0 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity dynamic-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="23 1.8 -10.5" rotation="0 0 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity dynamic-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="26 1.8 -10.5" rotation="0 0 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+ <a-entity dynamic-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="29 1.8 -10.5" rotation="0 0 0" material="shader: standard; metalness: 0.3;    
+ src: url(images/rift.jpg)"></a-entity>
+
+ <a-entity static-body geometry="primitive: box; depth: 1.1; height: 0.8; width: 1.1" position="-14 0.54 0" rotation="0 90 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1.1; height: 0.8; width: 1.1" position="-16 0.54 0" rotation="0 90 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1.1; height: 0.8; width: 1.1" position="-14 0.54 3" rotation="0 90 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1.1; height: 0.8; width: 1.1" position="-16 0.54 3" rotation="0 90 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1.1; height: 0.8; width: 1.1" position="-14 0.54 6" rotation="0 90 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1.1; height: 0.8; width: 1.1" position="-16 0.54 6" rotation="0 90 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1.1; height: 0.8; width: 1.1" position="-14 0.54 9" rotation="0 90 0" material="shader: standard; metalness: 0.1;     
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1.1; height: 0.8; width: 1.1" position="-16 0.54 9" rotation="0 90 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="-33.5 0.54 0" rotation="0 90 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="-33.5 0.54 3" rotation="0 90 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="-33.5 0.54 6" rotation="0 90 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity static-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="-33.5 0.54 9" rotation="0 90 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+
+ <a-entity dynamic-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="-20 1.8 -10.5" rotation="0 0 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity dynamic-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="-23 1.8 -10.5" rotation="0 0 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity dynamic-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="-26 1.8 -10.5" rotation="0 0 0" material="shader: standard; metalness: 0.1;    
+ src: url(images/vive.jpg)"></a-entity>
+ <a-entity dynamic-body geometry="primitive: box; depth: 1; height: 0.8; width: 1" position="-29 1.8 -10.5" rotation="0 0 0" material="shader: standard; metalness: 0.1;     
+ src: url(images/vive.jpg)"></a-entity>
+ 
+ --> 
+
+ 
+</a-entity>
+<!-- Display -->
+<a-entity static-body geometry="primitive: box; depth: 3; height: 1; width: 10" position="5 0.4 5" rotation="0 90 0" material="shader: standard; metalness: 0.9;    
+src: url(images/wall.jpg)">
+
+
+<a-entity id="model"  position="4 0.5 0">
+        <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="15000"
+                     easing="linear" repeat="indefinite"></a-animation>
+		 <a-collada-model  rotation="0 90 0" scale="2 2 2"
+                         src="#why-male-models" ></a-collada-model>			 
+       
+	   
+	    
+      </a-entity>
+	  
+	 
+	  
+	<a-entity id="boxr" visible="false" geometry="primitive: box; depth: 0; height: 1; width: 1" position="4.4 1 2.2" rotation="0 90 0" material="shader: flat; metalness: 0; 
+ src: url(images/pi1.PNG)"></a-entity>
+ <!----- RED MAN--->
+ <a-entity id="minus"  text="color: black; align: center; width: 5; font: exo2semibold; value: -"  visible="true" geometry="primitive: box; depth: 0; height: 0.3; width: 0.3" position="5.5 0.5 -1" rotation="0 90 0" material="shader: flat; metalness: 0; 
+"></a-entity>
+ <a-entity id="add"  text="color: black; align: center; width: 2; font: exo2semibold; value: ADD"  visible="true" geometry="primitive: box; depth: 0; height: 0.3; width: 0.3" position="5.5 0.5 0" rotation="0 90 0" material="shader: flat; metalness: 0; 
+"></a-entity>
+ <a-entity id="plus"  text="color: black; align: center; width: 2; font: exo2semibold; value: +"  visible="true" geometry="primitive: box; depth: 0; height: 0.3; width: 0.3" position="5.5 0.5 1" rotation="0 90 0" material="shader: flat; metalness: 0; 
+"></a-entity>
+<a-entity  text="value:  Quantity;width: 5;color: red; align: center;font: exo2semibold;" position="5.5 0.1 0.7" rotation="0 90 0"></a-entity>
+<a-entity id="score"  text="value:  0;width: 5;color: red; align: right;font: exo2semibold;" position="5.5 0.1 1.4" rotation="0 90 0"></a-entity>
+
+ <!----- WHITE SOFA--->
+ <a-entity id="minus1"  text="color: black; align: center; width: 5; font: exo2semibold; value: -"  visible="true" geometry="primitive: box; depth: 0; height: 0.3; width: 0.3" position="-2 0.8 -17" rotation="0 0 0" material="shader: flat; metalness: 0; 
+"></a-entity>
+ <a-entity id="add1"  text="color: black; align: center; width: 2; font: exo2semibold; value: ADD"  visible="true" geometry="primitive: box; depth: 0; height: 0.3; width: 0.3" position="-1 0.8 -17" rotation="0 0 0" material="shader: flat; metalness: 0; 
+"></a-entity>
+ <a-entity id="plus1"  text="color: black; align: center; width: 2; font: exo2semibold; value: +"  visible="true" geometry="primitive: box; depth: 0; height: 0.3; width: 0.3" position="0 0.8 -17" rotation="0 0 0" material="shader: flat; metalness: 0; 
+"></a-entity>
+<a-entity  text="value:  Quantity;width: 5;color: red; align: center;font: exo2semibold;" position="-2 0.4 -17" rotation="0 0 0"></a-entity>
+<a-entity id="score1"  text="value:  0;width: 5;color: red; align: right;font: exo2semibold;" position="-2.4 0.4 -17" rotation="0 0 0"></a-entity>
+
+
+<!----- BLACK CHAIR--->
+ <a-entity id="minus2"  text="color: black; align: center; width: 5; font: exo2semibold; value: -"  visible="true" geometry="primitive: box; depth: 0; height: 0.3; width: 0.3" position="-1.5 1.3 -37" rotation="0 0 0" material="shader: flat; metalness: 0; 
+"></a-entity>
+ <a-entity id="add2"  text="color: black; align: center; width: 2; font: exo2semibold; value: ADD"  visible="true" geometry="primitive: box; depth: 0; height: 0.3; width: 0.3" position="-1 1.3 -37" rotation="0 0 0" material="shader: flat; metalness: 0; 
+"></a-entity>
+ <a-entity id="plus2"  text="color: black; align: center; width: 2; font: exo2semibold; value: +"  visible="true" geometry="primitive: box; depth: 0; height: 0.3; width: 0.3" position="-0.5 1.3 -37" rotation="0 0 0" material="shader: flat; metalness: 0; 
+"></a-entity>
+<a-entity  text="value:  Quantity;width: 5;color: red; align: center;font: exo2semibold;" position="-1.7 1.7 -37" rotation="0 0 0"></a-entity>
+<a-entity id="score2"  text="value:  0;width: 5;color: red; align: right;font: exo2semibold;" position="-2.4 1.7 -37" rotation="0 0 0"></a-entity>
+
+
+<a-entity  text="value:  Electronic Appliances;width: 15;color: red; align: center;font: exo2semibold;" position="1 3 27" rotation="0 180 0">
+ </a-entity>
+					 
+<a-entity  text="value:  Home, Kitchen, Furniture;width: 15;color: red; align: center;font: exo2semibold;" position="1 4.5 10" rotation="0 180 0">
+</a-entity>
+<a-entity  text="value:  Home, Kitchen, Furniture;width: 15;color: red; align: center;font: exo2semibold;" position="1 4.5 10" rotation="0 0 0">
+</a-entity>
+<a-entity  text="value:  Fine Art, Home Decor ;width: 15;color: red; align: center;font: exo2semibold;" position="1 3 -39" rotation="0 0 0">
+</a-entity>
+<a-entity  text="value:  Indoor Lighting, Home Improvement ;width: 15;color: red; align: center;font: exo2semibold;" position="16 3 -30" rotation="0 -90 0">
+</a-entity>
+
+
+
+
+<a-entity io3d-furniture="id:6d4ad61c-0230-4eb3-bd83-f1d28bc7e7f9" position="4.8 0 8.5" scale="2 2 2" rotation="0 180 0"></a-entity>
+  <a-entity io3d-furniture="id:b595c7b7-13f6-433c-b77f-805e21672562" position="3.2 0 8.5" scale="2 2 2" rotation="0 180 0"></a-entity>
+    <a-entity io3d-furniture="id:8aacd7ff-eab0-4cff-b04a-2261cd4ddc79" position="0.4 0 8.5" scale="1.5 1.5 1.5" rotation="0 180 0"></a-entity>
+	 <a-entity io3d-furniture="id:637d15f6-415d-4faa-8b71-a4e03d4afae4" position="3.2 0 13" scale="1.5 1.5 1.5" rotation="0 0 0"></a-entity>
+  
+	<a-entity io3d-furniture="id:a10956ab-e79a-4c4e-a91b-ffdf955a53fe" position="0.4 0 13" scale="2 2 2" rotation="0 0 0"></a-entity>
+	
+	 <a-entity io3d-furniture="id:65ff899e-f684-43c4-be79-ed11103adcc0"  position="-1 0.8 28" scale="2 2 2" rotation="0 180 0"></a-entity>
+	 <a-entity io3d-furniture="id:7fb81a8c-4019-450c-b178-aba4c9d14b71" position="1 0 28" scale="2 2 2" rotation="0 180 0"></a-entity>
+	<a-entity io3d-furniture="id:28e7c2f6-42f9-4c33-b1e7-3972dc461d59" position="2.8 0 28" scale="2 2 2" rotation="0 180 0"></a-entity>
+	<a-entity io3d-furniture="id:038fe87e-9491-42dc-8442-7d66a6c32171" position="4.8 0 28" scale="2 2 2" rotation="0 180 0"></a-entity>
+	
+	<a-entity io3d-furniture="id:2cc172ce-5586-4c78-9477-be21a7b5a790" position="-1 0 -38"></a-entity>
+	 <a-entity io3d-furniture="id:201fe036-3735-4d46-b145-fe37c10f1250" position="-3 0 -38"></a-entity>
+	 <a-entity io3d-furniture="id:d17d81b3-8ab7-432c-bfe9-2d901dcafb21" position="2 0 -38"></a-entity>
+	   <a-entity io3d-furniture="id:0c68b35a-54a7-488f-a700-66e2ee2d88c0" position="4 0 -38"></a-entity>
+	   
+	    <a-entity io3d-furniture="id:fa56f1c5-bfce-4181-b310-c0ab12212d31" position="4 0 -21" rotation="0 180 0"></a-entity>
+		 <a-entity io3d-furniture="id:920d5f66-12fa-4df7-9473-424847b8cad2" position="1 0 -21" rotation="0 180 0"></a-entity>
+		  <a-entity io3d-furniture="id:98069106-3921-475d-b5d9-101dcbc75592" position="-1 0 -21" rotation="0 180 0"></a-entity>
+		  
+		  <!----tree --->
+  <a-entity io3d-furniture="id:9a17f541-886e-467e-b740-cf665d74af11" position="22 0.8 4.5" scale="2 2 2"></a-entity>
+  <a-entity io3d-furniture="id:ffabcd66-349b-4630-88ea-a8d0bafab824" position="29 0.8 4.5" scale="1 1 1"></a-entity>
+ <!--------------->
+ 
+ <!--- sofa -->
+  <a-entity io3d-furniture="id:11d5fecd-45c3-4b3e-9fb1-9711f5fd2b1e" position="15 0 17" rotation="0 270 0" scale="1.5 1.5 1.5"></a-entity>
+  <!---sofa-->
+<!--- fireplace -->
+ <a-entity io3d-furniture="id:f103bb18-96ba-4734-8905-87cd43bfb3ce" position="15 0 22" rotation="0 270 0" scale="1.5 1.5 1.5"></a-entity>
+
+  <!--- fireplace -->
+  <!---sofa-->
+   <a-entity io3d-furniture="id:64f97294-66f6-4728-bb29-f72ea34bca9b" position="15 0 -32" rotation="0 -90 0" scale="2 2 2"></a-entity>
+<!---sofa-->
+<!---night table light-->
+<a-entity io3d-furniture="id:b5ad4b9f-4d0a-4a13-b6e1-73fb8c35b4a0" position="15 0 -27" rotation="0 -90 0" scale="1.5 1.5 1.5"></a-entity>
+<!---night table light-->
+  <a-entity io3d-furniture="id:f77af0e3-7e6a-4eae-bcff-90cd4039af46" position="-1 0 -19" scale="2 2 2"></a-entity>
+
+
+ 
+ 
+
+  
+
+  
+
+
+
+
+
+
+	  
+	  <a-entity id="model1" begin="click" position="4 0.5 -10">
+        
+		 <a-collada-model  rotation="0 90 0" scale="2 2 2"
+                         src="#why-male-models1" ></a-collada-model>			 
+       
+      </a-entity>
+	   <a-entity id="model2" begin="click" position="4 0 -18.2">
+        
+		 <a-collada-model  rotation="0 90 0" scale="1.5 1.5 1.5"
+                         src="#table" ></a-collada-model>			 
+       
+      </a-entity>
+	  
+		 
+	 
+ 
+ <a-entity geometry="primitive: plane; height: 3.19; width: 3;" position="0.101 2.1 0" rotation="0 90 0" material="shader: flat; transparent: true; src: url(images/oculus1.jpg)"></a-entity>
+ <a-entity geometry="primitive: plane; height: 3.19; width: 3;" position="-0.101 2.1 0" rotation="0 -90 0" material="shader: flat; transparent: true; src: url(images/oculus1.jpg)"></a-entity>
+   
+  
+  
+ <a-entity geometry="primitive: box; depth: 0.2; height: 3.19; width: 3" position="0 2.1 0" rotation="0 90 0" material="shader: standard; metalness: 0.9;    
+ src: url(images/wall.jpg)"></a-entity>
+</a-entity>
+
+
+
+
+
+
+<a-entity static-body geometry="primitive: box; depth: 3; height: 1; width: 10" position="-5 0.4 5" rotation="0 90 0" material="shader: standard; metalness: 0.9;    
+src: url(images/wall.jpg)">
+ <a-entity geometry="primitive: plane; height: 3.19; width: 3;" position="0.101 2.1 0" rotation="0 90 0" material="shader: flat; transparent: true; src: url(images/htc.jpg)" ></a-entity>
+ <a-entity geometry="primitive: plane; height: 3.19; width: 3;" position="-0.101 2.1 0" rotation="0 -90 0" material="shader: flat; transparent: true; src: url(images/htc.jpg)" ></a-entity>
+  
+  
+  <a-entity geometry="primitive: box; depth: 0.2; height: 3.19; width: 3" position="0 2.1 0" rotation="0 90 0" material="shader: standard; metalness: 0.9;    
+ src: url(images/wall.jpg)"></a-entity>
+</a-entity>
+
+<!-- Posters -->
+<a-entity geometry="primitive: plane; height: 3.15; width: 5.6;" position="-25 2.8 14.648" rotation="0 180 0" material="shader: flat; transparent: true; src: url(images/vive1.jpg)"></a-entity>
+<a-entity geometry="primitive: plane; height: 2; width: 4;" position="25 2.8 14.648" rotation="0 180 0" material="shader: flat; transparent: true; src: url(images/clothes1.jpg)"></a-entity>
+<a-entity geometry="primitive: plane; height: 2; width: 2;"  position="12 2.8 14.648" rotation="0 180 0" material="shader: flat; transparent: true; src: url(images/shirt1.jpg)"></a-entity>
+
+
+<a-entity geometry="primitive: plane; height: 2; width: 2;" position="8 2.8 14.648" rotation="0 180 0" material="shader: flat; transparent: true; src: url(images/clothes2.jpg)"></a-entity>
+<a-entity geometry="primitive: plane; height: 2; width: 2;" position="4 2.8 14.648" rotation="0 180 0" material="shader: flat; transparent: true; src: url(images/girl.jpg)"></a-entity>
+<a-entity geometry="primitive: plane; height: 2; width: 6;" position="-2 2.8 14.648" rotation="0 180 0" material="shader: flat; transparent: true; src: url(images/girl2.jpg)"></a-entity>
+<a-entity geometry="primitive: plane; height: 2; width: 2.5;" position="-12 1 14.648" rotation="0 180 0" material="shader: flat; transparent: true; src: url(images/clothingrack1.jpg)"></a-entity>
+
+<a-entity geometry="primitive: plane; height: 2; width: 5.6;" position="13.8 2.8 -11.48" rotation="0 0 0" material="shader: flat; transparent: true; src: url(images/clothes-.jpg)"></a-entity>
+<a-entity geometry="primitive: plane; height: 3; width: 4;" position="-13.8 2.8 -11.48" rotation="0 0 0" material="shader: flat; transparent: true; src: url(images/shoe1.jpg)"></a-entity>
+<a-entity geometry="primitive: plane; height: 2.31; width: 2.5;" position="3.25 4.5 -47.1" rotation="0 0 0" material="shader: flat; transparent: true; src: url(images/sign-infiverse.png)"></a-entity>
+<a-entity geometry="primitive: plane; height: 2.31; width: 2.5;" position="-3.25 4.5 -47.1" rotation="0 0 0" material="shader: flat; transparent: true; src: url(images/sign-aframe.png)"></a-entity>
+
+<!-- Floor Shelves -->
+<a-entity static-body geometry="primitive: box; depth: 4; height: 1; width: 12.2" position="-24.75 -0.3 -11.5" rotation="0 0 0" material="shader: standard; metalness: 0.8;    
+src: url(images/wall.jpg)">
+<a-entity geometry="primitive: box; depth: 0.4; height: 3; width: 12.1" position="0 1 0" material="shader: standard; metalness: 0.9;    
+src: url(images/wall.jpg)"></a-entity>
+</a-entity>
+
+<a-entity static-body geometry="primitive: box; depth: 4; height: 1; width: 12.2" position="24.75 -0.3 -11.5" rotation="0 0 0" material="shader: standard; metalness: 0.8;    
+src: url(images/wall.jpg)">
+ <a-entity geometry="primitive: box; depth: 0.4; height: 3; width: 12.1" position="0 1 0" material="shader: standard; metalness: 0.9;    
+ src: url(images/wall.jpg)"></a-entity>
+</a-entity>
+
+<a-entity static-body geometry="primitive: box; depth: 4; height: 1; width: 12.2" position="-15 -0.3 5" rotation="0 90 0" material="shader: standard; metalness: 0.8;    
+src: url(images/wall.jpg)">
+ <a-entity geometry="primitive: box; depth: 0.4; height: 3; width: 12.1" position="0 1 0" material="shader: standard; metalness: 0.9;    
+ src: url(images/wall.jpg)"></a-entity>
+</a-entity>
+
+<a-entity static-body geometry="primitive: box; depth: 4; height: 1; width: 12.2" position="15 -0.3 5" rotation="0 90 0" material="shader: standard; metalness: 0.8;    
+src: url(images/wall.jpg)">
+ <a-entity geometry="primitive: box; depth: 0.4; height: 3; width: 12.1" position="0 1 0" material="shader: standard; metalness: 0.9;    
+ src: url(images/wall.jpg)"></a-entity>
+</a-entity>
+
+<a-entity static-body geometry="primitive: box; depth: 4; height: 1; width: 12.2" position="-34.5 -0.3 5" rotation="0 90 0" material="shader: standard; metalness: 0.8;    
+src: url(images/wall.jpg)">
+ <a-entity geometry="primitive: box; depth: 0.4; height: 3; width: 12.1" position="0 1 0" rotation="0 0 0" material="shader: standard; metalness: 0.9;    
+ src: url(images/wall.jpg)"></a-entity>
+</a-entity>
+
+<a-entity static-body geometry="primitive: box; depth: 4; height: 1; width: 12.2" position="34.5 -0.3 5" rotation="0 90 0" material="shader: standard; metalness: 0.8;    
+src: url(images/wall.jpg)">
+ <a-entity geometry="primitive: box; depth: 0.4; height: 3; width: 12.1" position="0 1 0" rotation="0 0 0" material="shader: standard; metalness: 0.9;    
+ src: url(images/wall.jpg)"></a-entity>
+</a-entity>
+
+<!-- Avatar -->
+<a-entity geometry="primitive: box; depth: 0.5; height: 0.9; width: 1;"  position="11.5 1.1 -22" rotation="0 -90 0"
+material="shader: standard; metalness: 0.3; color: #2380c0;">
+ <!-- Pants -->
+ <a-entity geometry="primitive: box; depth: 0.506; height: 0.204; width: 1.04;"  position="0 -0.4 0"
+ material="shader: standard; metalness: 0.5; color: #999;"></a-entity>
+ <!-- Legs -->
+ <a-entity geometry="primitive: box; depth: 0.47; height: 0.7; width: 0.49;"  position="0.265 -0.8 0"
+ material="shader: standard; color: tan;">
+  <a-entity geometry="primitive: box; depth: 0.48; height: 0.5; width: 0.492;"  position="0 0.11 0"
+  material="shader: standard; metalness: 0.5; color: #999;"></a-entity>
+ </a-entity>
+ <a-entity geometry="primitive: box; depth: 0.47 height: 0.7; width: 0.49;"  position="-0.265 -0.8 0"
+ material="shader: standard; color: tan;">
+  <a-entity geometry="primitive: box; depth: 0.48; height: 0.5; width: 0.492;"  position="0 0.11 0"
+  material="shader: standard; metalness: 0.5; color: #999;"></a-entity>
+ </a-entity>
+ <!-- Arms -->  
+ <a-entity geometry="primitive: box; depth: 0.4; height: 0.8; width: 0.36;"  position="0.67 0 0"
+ material="shader: standard; color: tan;">
+  <a-entity geometry="primitive: box; depth: 0.41; height: 0.6; width: 0.37;"  position="0 0.11 0"
+  material="shader: standard; metalness: 0.3; color: #2380c0;"></a-entity>
+ </a-entity>
+ <a-entity geometry="primitive: box; depth: 0.4; height: 0.8; width: 0.36;"  position="-0.67 0 0"
+ material="shader: standard; color: tan;">
+  <a-entity geometry="primitive: box; depth: 0.41; height: 0.6; width: 0.37;"  position="0 0.11 0"
+  material="shader: standard; metalness: 0.3; color: #2380c0;"></a-entity>
+</a-entity>
+
+ <a-entity geometry="primitive: box; depth: 0.47; height: 0.56; width: 0.5;"  position="0 0.7 0"
+ material="shader: standard; color: tan;">
+  <a-entity geometry="primitive: plane; height: 0.4; width: 0.4;"  position="0 0 0.25"
+  material="shader: flat; transparent: true; src: url(images/face.png);"></a-entity>
+</a-entity>
+</a-entity>
+
+<!-- Lights -->
+<a-entity static-body geometry="primitive: cylinder; radius: 1; height: 0.3" position="0 6 -20" rotation="0 90 0" material="shader: standard; metalness: 0.8; src: url(images/wall.jpg)">
+ <a-entity static-body geometry="primitive: cylinder; radius: 0.7; height: 0.3" position="0 -0.02 0" rotation="0 90 0" material="shader: standard; color: white"></a-entity></a-entity>
+
+<a-entity static-body geometry="primitive: cylinder; radius: 1; height: 0.3" position="0 6 0" rotation="0 90 0" material="shader: standard; metalness: 0.8; src: url(images/wall.jpg)">
+ <a-entity static-body geometry="primitive: cylinder; radius: 0.7; height: 0.3" position="0 -0.02 0" rotation="0 90 0" material="shader: standard; color: #fff"></a-entity></a-entity>
+<a-entity static-body geometry="primitive: cylinder; radius: 1; height: 0.3" position="0 6 10" rotation="0 90 0" material="shader: standard; metalness: 0.8; src: url(images/wall.jpg)">
+ <a-entity static-body geometry="primitive: cylinder; radius: 0.7; height: 0.3" position="0 -0.02 0" rotation="0 90 0" material="shader: standard; color: #fff"></a-entity></a-entity>
+
+<a-entity static-body geometry="primitive: cylinder; radius: 1; height: 0.3" position="10 6 0" rotation="0 90 0" material="shader: standard; metalness: 0.8; src: url(images/wall.jpg)">
+ <a-entity static-body geometry="primitive: cylinder; radius: 0.7; height: 0.3" position="0 -0.02 0" rotation="0 90 0" material="shader: standard; color: #fff"></a-entity></a-entity>
+<a-entity static-body geometry="primitive: cylinder; radius: 1; height: 0.3" position="10 6 10" rotation="0 90 0" material="shader: standard; metalness: 0.8; src: url(images/wall.jpg)">
+ <a-entity static-body geometry="primitive: cylinder; radius: 0.7; height: 0.3" position="0 -0.02 0" rotation="0 90 0" material="shader: standard; color: #fff"></a-entity></a-entity>
+
+<a-entity static-body geometry="primitive: cylinder; radius: 1; height: 0.3" position="20 6 0" rotation="0 90 0" material="shader: standard; metalness: 0.8; src: url(images/wall.jpg)">
+ <a-entity static-body geometry="primitive: cylinder; radius: 0.7; height: 0.3" position="0 -0.02 0" rotation="0 90 0" material="shader: standard; color: #fff"></a-entity></a-entity>
+<a-entity static-body geometry="primitive: cylinder; radius: 1; height: 0.3" position="20 6 10" rotation="0 90 0" material="shader: standard; metalness: 0.8; src: url(images/wall.jpg)">
+ <a-entity static-body geometry="primitive: cylinder; radius: 0.7; height: 0.3" position="0 -0.02 0" rotation="0 90 0" material="shader: standard; color: #fff"></a-entity></a-entity>
+
+<a-entity static-body geometry="primitive: cylinder; radius: 1; height: 0.3" position="-10 6 0" rotation="0 90 0" material="shader: standard; metalness: 0.8; src: url(images/wall.jpg)">
+ <a-entity static-body geometry="primitive: cylinder; radius: 0.7; height: 0.3" position="0 -0.02 0" rotation="0 90 0" material="shader: standard; color: #fff"></a-entity></a-entity>
+<a-entity static-body geometry="primitive: cylinder; radius: 1; height: 0.3" position="-10 6 10" rotation="0 90 0" material="shader: standard; metalness: 0.8; src: url(images/wall.jpg)">
+ <a-entity static-body geometry="primitive: cylinder; radius: 0.7; height: 0.3" position="0 -0.02 0" rotation="0 90 0" material="shader: standard; color: #fff"></a-entity></a-entity>
+
+<a-entity static-body geometry="primitive: cylinder; radius: 1; height: 0.3" position="-20 6 0" rotation="0 90 0" material="shader: standard; metalness: 0.8; src: url(images/wall.jpg)">
+ <a-entity static-body geometry="primitive: cylinder; radius: 0.7; height: 0.3" position="0 -0.02 0" rotation="0 90 0" material="shader: standard; color: #fff"></a-entity></a-entity>
+<a-entity static-body geometry="primitive: cylinder; radius: 1; height: 0.3" position="-20 6 10" rotation="0 90 0" material="shader: standard; metalness: 0.8; src: url(images/wall.jpg)">
+ <a-entity static-body geometry="primitive: cylinder; radius: 0.7; height: 0.3" position="0 -0.02 0" rotation="0 90 0" material="shader: standard; color: #fff"></a-entity></a-entity>
+
+<!-- Counter -->
+<a-entity static-body geometry="primitive: box; depth: 1.6; height: 0.2; width: 11.2" position="10.2 1 -21.5" rotation="0 90 0" material="shader: standard; side: double; metalness: 0.9; 
+src: url(images/floor.jpg); repeat: 3 1"></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 1; height: 1; width: 11" position="10 0.5 -21.5" rotation="0 90 0" material="shader: standard; side: double; metalness: 0.6; 
+color: lightwhite"></a-entity>
+
+<a-entity static-body geometry="primitive: box; depth: 1.6; height: 0.2; width: 11.2" position="-10.2 1 -21.5" rotation="0 90 0" material="shader: standard; side: double; metalness: 0.9; 
+src: url(images/floor.jpg); repeat: 3 1"></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 1; height: 1; width: 11" position="-10 0.5 -21.5" rotation="0 90 0" material="shader: standard; side: double; metalness: 0.6; 
+color: #3b4c72"></a-entity>
+<!--- Product Dress --->
+<a-entity position="0 0 -20.5" scale="0.001 0.001 0.001" obj-model="obj: #Dress-obj; mtl: #Dress-mtl" ></a-entity>
+
+
+<!-- Doors -->
+<a-entity geometry="primitive: box; depth: 0.1; height: 4; width: 3.5" position="-3.25 2 -27.5" rotation="0 0 0" material="shader: standard; opacity: 0.2;
+color: #00d0fd"></a-entity>
+<a-entity geometry="primitive: box; depth: 0.1; height: 4; width: 3.5" position="3.25 2 -27.5" rotation="0 0 0" material="shader: standard; opacity: 0.2;
+color: #00d0fd" ></a-entity>
+
+<!-- First Walls-->
+<a-entity static-body geometry="primitive: box; depth: 1; height: 7; width: 16" position="15 2.5 -19.8" rotation="0 90 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 1; height: 7; width: 16" position="-15 2.5 -19.8" rotation="0 90 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+
+<a-entity static-body geometry="primitive: box; depth: 1; height: 7; width: 26" position="22 2.5 -12" rotation="0 0 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 1; height: 7; width: 26" position="-22 2.5 -12" rotation="0 0 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+
+<a-entity static-body geometry="primitive: box; depth: 1; height: 2; width: 26" position="0 5 -12" rotation="0 0 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+
+<!-- Front Walls -->
+<a-entity static-body geometry="primitive: box; depth: 0.7; height: 7.5; width: 30" position="20 2.4 -27.5" rotation="0 0 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 0.7; height: 7.5; width: 30" position="-20 2.4 -27.5" rotation="0 0 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+
+<a-entity static-body geometry="primitive: box; depth: 0.7; height: 7.5; width: 3" position="0 2.4 -27.5" rotation="0 0 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 0.7; height: 2.8; width: 10" position="0 4.5 -27.5" rotation="0 0 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+
+<!-- Exterior Walls-->
+<a-entity static-body geometry="primitive: box; depth: 0.7; height: 7; width: 109" position="35 2.5 -37.5" rotation="0 90 0" material="shader: standard;  metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 0.7; height: 7; width: 109" position="-35 2.5 -37.5" rotation="0 90 0" material="shader: standard;  metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 0.7; height: 7; width: 70" position="0 2.5 15" rotation="0 0 0" material="shader: standard; metalness: 0.6;  
+color: #3b4c72;"></a-entity>
+
+<!-- Roof -->
+<a-entity static-body geometry="primitive: box; depth: 1; height: 44; width: 71" position="0 6.5 -6" rotation="-90 0 0"   
+material="shader: standard; side: double; metalness: 0.2; src: url(images/c1.jpg); repeat: 20 20"></a-entity>
+
+<!-- Front Walls 2 -->
+<a-entity static-body geometry="primitive: box; depth: 0.7; height: 7.5; width: 30" position="20 2.4 -47.5" rotation="0 0 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 0.7; height: 7.5; width: 30" position="-20 2.4 -47.5" rotation="0 0 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+
+<a-entity static-body geometry="primitive: box; depth: 0.7; height: 7.5; width: 3" position="0 2.4 -47.5" rotation="0 0 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 0.7; height: 2.8; width: 10" position="0 4.5 -47.5" rotation="0 0 0" material="shader: standard; metalness: 0.6; 
+color: #3b4c72;"></a-entity>
+
+<!-- Exterior Wall 2 -->
+<a-entity static-body geometry="primitive: box; depth: 0.7; height: 7; width: 70" position="0 2.5 -89" rotation="0 0 0" material="shader: standard; metalness: 0.6;  
+color: #3b4c72;"></a-entity>
+
+<!-- Doors 2 -->
+<a-entity static-body geometry="primitive: box; depth: 0.1; height: 4; width: 3.5" position="-3.25 2 -47.5" rotation="0 0 0" material="shader: standard; opacity: 0.8;
+color: #00d0fd" onClick="location.href='http://www.assystem.com/en/home.html'"></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 0.1; height: 4; width: 3.5" position="3.25 2 -47.5" rotation="0 0 0" material="shader: standard; opacity: 0.8;
+color: #00d0fd" onClick="location.href='https://www.sqs.com/en/index.php'"></a-entity>
+
+<!-- Roof 2 -->
+<a-entity static-body geometry="primitive: box; depth: 1; height: 44; width: 71" position="0 6.5 -69" rotation="-90 0 0"   
+material="shader: standard; side: double; metalness: 0.3; src: url(images/ceiling.jpg); repeat: 20 20"></a-entity>
+
+<!-- Bush -->
+<a-entity static-body geometry="primitive: box; depth: 2; height: 2; width: 20" position="-34 0.2 -37" rotation="0 90 0" material="shader: flat; opacity: 0.9;
+src: url(images/bush.jpg); repeat: 10 1;"></a-entity>
+<a-entity static-body geometry="primitive: box; depth: 2; height: 2; width: 20" position="34 0.2 -37" rotation="0 90 0" material="shader: flat; opacity: 0.9;
+src: url(images/bush.jpg); repeat: 10 1;"></a-entity>
+
+<!-- Bench -->
+<a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="-15 0.7 -29" rotation="0 180 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)">
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0 0.2" rotation="0 0 0" material="shader: standard; metalness: 0.7; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0 -0.2" rotation="0 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 0.7" position="-1.05 0 -0.07" rotation="0 90 0" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 0.7" position="1.05 0 -0.07" rotation="0 90 0" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 2" position="1.05 -1 0.22" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 3.4" position="1.05 -1 -0.45" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 2" position="-1.05 -1 0.22" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 3.4" position="-1.05 -1 -0.45" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0.6 -0.45" rotation="90 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0.4 -0.45" rotation="90 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0.2 -0.45" rotation="90 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+</a-entity>
+
+<a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="15 0.7 -29" rotation="0 180 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)">
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0 0.2" rotation="0 0 0" material="shader: standard; metalness: 0.7; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0 -0.2" rotation="0 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 0.7" position="-1.05 0 -0.07" rotation="0 90 0" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 0.7" position="1.05 0 -0.07" rotation="0 90 0" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 2" position="1.05 -1 0.22" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 3.4" position="1.05 -1 -0.45" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 2" position="-1.05 -1 0.22" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 3.4" position="-1.05 -1 -0.45" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0.6 -0.45" rotation="90 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0.4 -0.45" rotation="90 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0.2 -0.45" rotation="90 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+</a-entity>
+
+<a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="15 0.7 -46" rotation="0 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)">
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0 0.2" rotation="0 0 0" material="shader: standard; metalness: 0.7; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0 -0.2" rotation="0 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 0.7" position="-1.05 0 -0.07" rotation="0 90 0" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 0.7" position="1.05 0 -0.07" rotation="0 90 0" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 2" position="1.05 -1 0.22" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 3.4" position="1.05 -1 -0.45" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 2" position="-1.05 -1 0.22" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 3.4" position="-1.05 -1 -0.45" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0.6 -0.45" rotation="90 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0.4 -0.45" rotation="90 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0.2 -0.45" rotation="90 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+</a-entity>
+
+<a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="-15 0.7 -46" rotation="0 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)">
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0 0.2" rotation="0 0 0" material="shader: standard; metalness: 0.7; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0 -0.2" rotation="0 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 0.7" position="-1.05 0 -0.07" rotation="0 90 0" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 0.7" position="1.05 0 -0.07" rotation="0 90 0" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 2" position="1.05 -1 0.22" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 3.4" position="1.05 -1 -0.45" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 2" position="-1.05 -1 0.22" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.1; height: 0.1; width: 3.4" position="-1.05 -1 -0.45" rotation="0 90 90" material="shader: standard; metalness: 0.8; color: grey"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0.6 -0.45" rotation="90 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0.4 -0.45" rotation="90 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+ <a-entity geometry="primitive: box; depth: 0.15; height: 0.1; width: 2" position="0 0.2 -0.45" rotation="90 0 0" material="shader: standard; metalness: 0.6; src: url(images/wood.jpg)"></a-entity>
+</a-entity>
+
+<!-- Speech -->
+<a-entity id="speech1" visible="true" geometry="primitive: plane; height: 1.24; width: 2.4;" position="11.5 2.3 -20.3" rotation="0 -90 0"
+material="shader: flat; transparent: true; src: url(images/hello.png);"></a-entity>
+<a-entity id="speech2" visible="false" geometry="primitive: plane; height: 1.24; width: 2.4;" position="11.5 2.3 -23.9" rotation="0 -90 0"
+material="shader: flat; transparent: true; src: url(images/welcome.png);"></a-entity>
+<a-entity id="speech3" visible="false" geometry="primitive: plane; height: 1.24; width: 2.4;" position="11.5 2.3 -20.3" rotation="0 -90 0"
+material="shader: flat; transparent: true; src: url(images/viewed.png);"></a-entity>
+<a-entity id="speech4" visible="false" geometry="primitive: plane; height: 1.24; width: 2.4;" position="11.5 2.3 -23.9" rotation="0 -90 0"
+material="shader: flat; transparent: true; src: url(images/headsets.png);"></a-entity> 
+<a-entity id="speech5" visible="false" geometry="primitive: plane; height: 1.24; width: 2.4;" position="11.5 2.3 -20.3" rotation="0 -90 0"
+material="shader: flat; transparent: true; src: url(images/welcome1.png);"></a-entity>
+
+<a-entity id="speech6" visible="false" geometry="primitive: plane; height: 1.24; width: 2.4;" position="11.5 2.3 -23.9" rotation="0 -90 0"
+material="shader: flat; transparent: true; src: url(images/browse.png);"></a-entity> 
+<a-entity id="speech7" visible="false" geometry="primitive: plane; height: 1.24; width: 2.4;" position="11.5 2.3 -20.3" rotation="0 -90 0"
+material="shader: flat; transparent: true; src: url(images/pickup.png);"></a-entity>
+<a-entity id="speech8" visible="false" geometry="primitive: plane; height: 1.24; width: 2.4;" position="11.5 2.3 -23.9" rotation="0 -90 0"
+material="shader: flat; transparent: true; src: url(images/drawvr1.png);"></a-entity>
+
+
+
+
+<!-- Gift Cards -->
+<a-entity geometry="primitive: box; depth: 0.2; height: 3; width: 3.4" position="-14.398 1.3 -18" rotation="0 90 0"
+ material="shader: standard; metalness: 0.9; src: url(images/floor.jpg); repeat: 1 1"></a-entity>
+  
+<a-entity static-body geometry="primitive: plane; height: 2.2; width: 2.8" position="-14.292 1.4 -18" rotation="0 90 0" 
+material="shader: flat; transparent: true; src: url(images/clothingrack2.jpg)"></a-entity>
+
+
+
+<a-entity geometry="primitive: box; depth: 0.2; height: 3; width: 3.4" position="-14.398 1.3 -23" rotation="0 90 0"
+ material="shader: standard; metalness: 0.9; src: url(images/floor.jpg); repeat: 1 1"></a-entity>
+   
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="-14.292 2.4 -23" rotation="0 90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="-14.292 2.4 -22" rotation="0 90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="-14.292 2.4 -24" rotation="0 90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="-14.292 1.6 -23" rotation="0 90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="-14.292 1.6 -22" rotation="0 90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="-14.292 1.6 -24" rotation="0 90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+ 
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="-14.292 0.8 -23" rotation="0 90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="-14.292 0.8 -22" rotation="0 90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="-14.292 0.8 -24" rotation="0 90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+ 
+
+
+<a-entity geometry="primitive: box; depth: 0.2; height: 3; width: 3.4" position="14.398 1.3 -18" rotation="0 90 0"
+ material="shader: standard; metalness: 0.9; src: url(images/floor.jpg); repeat: 1 1"></a-entity>
+  
+<a-entity static-body geometry="primitive: plane; height: 2; width: 3" position="14.292 1.4 -18" rotation="0 -90 0" 
+material="shader: flat; transparent: true; src: url(images/clothingrack1.jpg)"></a-entity>
+
+
+<a-entity geometry="primitive: box; depth: 0.2; height: 3; width: 3.4" position="14.398 1.3 -23" rotation="0 90 0"
+ material="shader: standard; metalness: 0.9; src: url(images/floor.jpg); repeat: 1 1"></a-entity>
+   
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="14.292 2.4 -23" rotation="0 -90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="14.292 2.4 -22" rotation="0 -90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="14.292 2.4 -24" rotation="0 -90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="14.292 1.6 -23" rotation="0 -90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="14.292 1.6 -22" rotation="0 -90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="14.292 1.6 -24" rotation="0 -90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+ 
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="14.292 0.8 -23" rotation="0 -90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="14.292 0.8 -22" rotation="0 -90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+<a-entity static-body geometry="primitive: plane; height: 0.34; width: 0.50" position="14.292 0.8 -24" rotation="0 -90 0" material="shader: flat; transparent: true; src: url(images/xbox.png)"></a-entity>
+ 
+ 
+ <a-entity static-body geometry="primitive: plane; height: 1.5; width: 9" position="0 5 -26.9" rotation="10 0 0" 
+material="shader: flat; transparent: true; src: url(images/thnku1.jpg)"></a-entity>
+
+ 
+    
+<!-- Floor -->
+<a-entity static-body geometry="primitive: plane; height: 110; width: 70" position="0 0 -40" rotation="-90 0 0" 
+material="shader: flat; src: url(images/floor.jpg); repeat: 50 100"></a-entity> 
+
+
+<!-- Camera -->   
+<a-entity id="camera" camera kinematic-body universal-controls jump-ability="enableDoubleJump: true; distance: 2.8;" 
+                                             position="0 1.8 -42" rotation="0 180 0" 
+                                             cursor-visible="enabled: true">
+  <a-entity id="cursor" cursor="fuse: true; maxDistance: 5; timeout: 200" geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.01" material="color: #1a608f" position="0 0 -0.69">
+  </a-entity>
+ <a-entity id="drag" append="on: mousedown;" position="0 0.8 -3"></a-entity>
+</a-entity>
+
+  <a-sky src="images/sky.jpg" radius="250"></a-sky>   
+
+      <a-light type="ambient" color="white" position="" rotation="" scale="" visible="" light=""></a-light>
+      <a-light color="#668" distance="100" intensity="0.4" type="point" position="" rotation="" scale="" visible="" light=""></a-light>
+    <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="1086" height="811" style="width: 724px; height: 541px;"></canvas>
+	<div class="a-enter-vr" aframe-injected=""><button class="a-enter-vr-button" aframe-injected=""></button>
+	</div><div class="a-orientation-modal a-hidden" aframe-injected=""><button aframe-injected="">Exit VR</button></div></a-scene>
+  
+
+  
+<div class="rs-base"><div class="rs-container" style="height: auto;">
+
+
+  
+  
+<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           Shopping Cart</h1>
+<h1>----------------------------------</h1>
+<h1>Product | Quan | Price | Total</h1>
+<h1>__________________________________</h1>
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <br><br>                                     </h1>
+	
+	<h1 id="p1">                        </h1>
+	<h1 id="p2">                        </h1>
+	<h1 id="p3">                        </h1>
+	<h1 id="p4">                        </h1>
+	<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <br><br>                                     </h1>
+	<h2 style="color:red;" id="p5"></h2>
+	<!---	<h2 style="color:red;" id="demo"></h2>
+	
+		<button onclick="myFunction()">Block</button>
+		
+		-->
+</div>
+
+</div>
+
+
+<script>
+document.querySelector('#speech1').addEventListener('click', function (){	
+document.querySelector('#speech1').setAttribute('visible', 'false')
+document.querySelector('#speech2').setAttribute('visible', 'true')
+});
+document.querySelector('#speech2').addEventListener('click', function (){	
+document.querySelector('#speech2').setAttribute('visible', 'false')
+document.querySelector('#speech3').setAttribute('visible', 'true')
+});
+document.querySelector('#speech3').addEventListener('click', function (){	
+document.querySelector('#speech3').setAttribute('visible', 'false')
+document.querySelector('#speech4').setAttribute('visible', 'true')
+});
+document.querySelector('#speech4').addEventListener('click', function (){	
+document.querySelector('#speech4').setAttribute('visible', 'false')
+document.querySelector('#speech5').setAttribute('visible', 'true')
+});
+document.querySelector('#speech5').addEventListener('click', function (){	
+document.querySelector('#speech5').setAttribute('visible', 'false')
+document.querySelector('#speech6').setAttribute('visible', 'true')
+});
+document.querySelector('#speech6').addEventListener('click', function (){	
+document.querySelector('#speech6').setAttribute('visible', 'false')
+document.querySelector('#speech7').setAttribute('visible', 'true')
+});
+document.querySelector('#speech7').addEventListener('click', function (){	
+document.querySelector('#speech7').setAttribute('visible', 'false')
+document.querySelector('#speech8').setAttribute('visible', 'true')
+});
+document.querySelector('#speech8').addEventListener('click', function (){	
+document.querySelector('#speech8').setAttribute('visible', 'false')
+document.querySelector('#speech1').setAttribute('visible', 'true')
+});
+document.querySelector('#model').addEventListener('click', function (){	
+document.querySelector('#boxr').setAttribute('visible', 'true')
+
+});
+
+
+</script>
+
+ 
+
+
+
+
+</body></html>

@@ -1,0 +1,44 @@
+# MTL Exporter v1.0 by Seungwoo Oh at CLO - Virtual Fashion Inc.
+newmtl Material__165
+Ka 0.588000 0.588000 0.588000
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ns 101.120003
+illum 2
+d 1.000000
+map_Kd wood_2.jpg
+map_Ka wood_2.jpg
+newmtl Material__166
+Ka 0.588000 0.588000 0.588000
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ns 23.040001
+illum 2
+d 1.000000
+map_Kd metal2.jpg
+map_Ka metal2.jpg
+newmtl Material19239
+Ka 0.847059 0.847059 0.847059
+Kd 0.913725 0.913725 0.913725
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+map_Ka pinktopurple-gradient.jpg
+map_Kd pinktopurple-gradient.jpg
+newmtl Material19245
+Ka 0.847059 0.847059 0.847059
+Kd 0.913725 0.913725 0.913725
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+map_Ka pinktopurple-gradient.jpg
+map_Kd pinktopurple-gradient.jpg
+newmtl Material19250
+Ka 0.139516 0.006644 0.279031
+Kd 0.150496 0.007166 0.300992
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
